@@ -1,6 +1,12 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { MESSAGES } from '../messages/auth.message'; // Ajuste o caminho conforme necessário
 
+/**
+ * Exceção personalizada para acesso não autorizado.
+ * Estende a classe HttpException para fornecer uma resposta de erro personalizada.
+ *
+ * @throws {UnauthorizedException} - Lança quando o usuário não está autorizado a acessar um recurso.
+ */
 export class UnauthorizedException extends HttpException {
   constructor() {
     super(
@@ -12,7 +18,12 @@ export class UnauthorizedException extends HttpException {
     );
   }
 }
-
+/**
+ * Exceção personalizada para senha inválida.
+ * Estende a classe HttpException para fornecer uma resposta de erro personalizada.
+ *
+ * @throws {InvalidPasswordException} - Lança quando a senha fornecida é inválida.
+ */
 export class InvalidPasswordException extends HttpException {
   constructor() {
     super(
@@ -25,6 +36,12 @@ export class InvalidPasswordException extends HttpException {
   }
 }
 
+/**
+ * Exceção personalizada para nome de usuário em uso.
+ * Estende a classe HttpException para fornecer uma resposta de erro personalizada.
+ *
+ * @throws {UsernameInUseException} - Lança quando o nome de usuário fornecido já está em uso.
+ */
 export class UsernameInUseException extends HttpException {
   constructor() {
     super(
