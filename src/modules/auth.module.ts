@@ -20,7 +20,7 @@ import * as process from "node:process";
         JwtModule.register({
             secret: process.env.JWT_SECRET,
             signOptions: {
-                expiresIn: process.env.JWT_EXPIRES_IN
+                expiresIn: process.env.JWT_EXPIRATION_TIME
             }
         })
     ]

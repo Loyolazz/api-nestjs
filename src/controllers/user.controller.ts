@@ -7,6 +7,18 @@ import {MESSAGES} from "../utils/messages/user.message";
 export class UserControllers {
     constructor(private readonly userService: UserService) {}
 
+        /**
+     * Recupera todos os usuários do banco de dados.
+     *
+     * @param {Request} req - O objeto de solicitação recebido.
+     * @param {Response} res - O objeto de resposta.
+     * @returns {Promise<any>} - Uma promessa que resolve para o objeto de resposta.
+     *
+     * A função envia uma solicitação GET para o ponto de extremidade '/users'. Ela recupera todos os usuários do banco de dados usando o
+     * `userService.findAllUsers()` métod. Se os usuários são recuperados com êxito, ela envia uma resposta JSON com um código de status
+     * de 200 e os usuários recuperados. Se não forem encontrados usuários, ela envia uma resposta JSON com um código de status de 404.
+     * Se ocorrer um erro durante o processo de recuperação, ela envia uma resposta JSON com um código de status de 500.
+     */
     @Get()
     async getAllUsers(@Req() req: Request, @Res() res: Response):Promise<any> {
         try {
