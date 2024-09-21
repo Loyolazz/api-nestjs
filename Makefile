@@ -23,19 +23,19 @@ deploy_prod:
 	$(MAKE) install_dep_prod
 
 install_dep_dev:
-	docker exec api npm install
-	docker exec api npm run build
+	docker exec nest_prisma_jwt_api npm install
+	docker exec nest_prisma_jwt_api npm run build
 
 install_dep_hml:
-	docker exec api npm install
-	docker exec api npm run build
+	docker exec nest_prisma_jwt_api npm install
+	docker exec nest_prisma_jwt_api npm run build
 
 install_dep_prod:
-	docker exec api npm install --production
-	docker exec api npm run build
+	docker exec nest_prisma_jwt_api npm install --production
+	docker exec nest_prisma_jwt_api npm run build
 
 prisma_migrate:
-	docker exec api npx prisma migrate deploy
+	docker exec nest_prisma_jwt_api npx prisma migrate deploy
 
 prisma_generate:
-	docker exec api npx prisma generate
+	docker exec nest_prisma_jwt_api npx prisma generate

@@ -5,7 +5,7 @@ services:
     build: .
     container_name: nest_prisma_jwt_api
     ports:
-      - '3000:3000'
+      - '3666:3666'
     environment:
       - NODE_ENV=${NODE_ENV}
       - DATABASE_URL=${DATABASE_URL}
