@@ -36,7 +36,7 @@ async login(
   } catch (err) {
     return res.status(500).json({
       status: HttpStatus.INTERNAL_SERVER_ERROR,
-      message: MESSAGES.LOGIN_ERROR.description || MESSAGES.INTERNAL_SERVER_ERROR.description,
+      message: MESSAGES.LOGIN_ERROR.description || MESSAGES.INTERNAL_SERVER_ERROR.description  || (err as Error).message,
     });
   }
 }

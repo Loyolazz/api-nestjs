@@ -38,7 +38,7 @@ export class UserControllers {
         }catch (err){
             return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
                 status: MESSAGES.INTERNAL_SERVER_ERROR.code,
-                message: MESSAGES.INTERNAL_SERVER_ERROR.description,
+                message: MESSAGES.INTERNAL_SERVER_ERROR.description || (err as Error).message,
             });
         }
     }
